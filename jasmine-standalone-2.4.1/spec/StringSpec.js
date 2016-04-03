@@ -35,4 +35,30 @@ describe('Extended String Class', function() {
       expect('áéîôü'.hasVowels()).toBe(false);
     });
   });
+
+  describe('method toUpper', function() {
+    it('is defined', function() {
+      expect(String.toUpper).toBeDefined();
+    });
+
+    it('is a function', function() {
+      expect(String.toUpper).toEqual(jasmine.any(Function));
+    });
+
+    it('converts lower case characters to upper case', function() {
+      expect('an'.toUpper()).toBe('AN');
+      expect('the rain in spain'.toUpper()).toBe('THE RAIN IN SPAIN');
+      expect('cOmBiNaTiOn'.toUpper()).toBe('COMBINATION');
+      expect('!c@h#a$r%a^c&t*e(r)s?'.toUpper()).toBe('!C@H#A$R%A^C&T*E(R)S?');
+      expect('num123bers456'.toUpper()).toBe('NUM123BERS456');
+      expect('dìàctérícs'.toUpper()).toBe('DÌÀCTÉRÍCS');
+    });
+
+    it('does not convert non alphabetic and upper case characters', function() {
+      expect('ABCD'.toUpper()).toBe('ABCD');
+      expect('12345'.toUpper()).toBe('12345');
+      expect('!@#$'.toUpper()).toBe('!@#$');
+      expect('    '.toUpper()).toBe('    ');
+    });
+  });
 });
