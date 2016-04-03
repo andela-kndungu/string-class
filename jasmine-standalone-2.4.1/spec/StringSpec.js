@@ -61,4 +61,30 @@ describe('Extended String Class', function() {
       expect('    '.toUpper()).toBe('    ');
     });
   });
+
+  describe('method toLower', function() {
+    it('is defined', function() {
+      expect(String.toLower).toBeDefined();
+    });
+
+    it('is a function', function() {
+      expect(String.toLower).toEqual(jasmine.any(Function));
+    });
+
+    it('converts upper case characters to lower case', function() {
+      expect('An'.toLower()).toBe('an');
+      expect('THE RAIN IN SPAIN'.toLower()).toBe('the rain in spain');
+      expect('cOmBiNaTiOn'.toLower()).toBe('combination');
+      expect('!C@H#A$R%A^C&T*E(R)S?'.toLower()).toBe('!c@h#a$r%a^c&t*e(r)s?');
+      expect('NUM123BERS456'.toLower()).toBe('num123Bbers456');
+      expect('DÌÀCTÉRÍCS'.toLower()).toBe('dìàctérícs');
+    });
+
+    it('does not convert non alphabetic and lower case characters', function() {
+      expect('abcd'.toUpper()).toBe('abcd');
+      expect('12345'.toUpper()).toBe('12345');
+      expect('!@#$'.toUpper()).toBe('!@#$');
+      expect('    '.toUpper()).toBe('    ');
+    });
+  });
 });
