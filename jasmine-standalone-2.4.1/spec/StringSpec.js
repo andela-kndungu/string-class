@@ -87,4 +87,32 @@ describe('Extended String Class', function() {
       expect('    '.toUpper()).toBe('    ');
     });
   });
+
+  describe('method ucFirst', function() {
+    it('is defined', function() {
+      expect(String.ucFirst).toBeDefined();
+    });
+
+    it('is a function', function() {
+      expect(String.ucFirst).toEqual(jasmine.any(Function));
+    });
+
+    it('converts lower case characters to upper case', function() {
+      expect('an'.ucFirst()).toBe('An');
+      expect('the rain in spain'.ucFirst()).toBe('The rain in spain');
+      expect('cOmBiNaTiOn'.ucFirst()).toBe('COmBiNaTiOn');
+      expect('!c@h#a$r%a^c&t*e(r)s?'.ucFirst()).toBe('!c@h#a$r%a^c&t*e(r)s?');
+      expect('num123bers456'.ucFirst()).toBe('Num123bers456');
+      expect('ìàctérícs'.ucFirst()).toBe('Ìàctérícs');
+    });
+
+    it('does not carry out unnessecary conversions', function() {
+      expect('ABCD'.ucFirst()).toBe('ABCD');
+      expect('12345'.ucFirst()).toBe('12345');
+      expect('!@#$'.ucFirst()).toBe('!@#$');
+      expect('    '.ucFirst()).toBe('    ');
+      expect('Abott'.ucFirst()).toBe('Abott');
+    });
+  });
+
 });
