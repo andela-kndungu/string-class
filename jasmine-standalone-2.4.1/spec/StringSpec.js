@@ -97,7 +97,7 @@ describe('Extended String Class', function() {
       expect(String.ucFirst).toEqual(jasmine.any(Function));
     });
 
-    it('converts lower case characters to upper case', function() {
+    it('converts first letter lower case characters to upper case', function() {
       expect('an'.ucFirst()).toBe('An');
       expect('the rain in spain'.ucFirst()).toBe('The rain in spain');
       expect('cOmBiNaTiOn'.ucFirst()).toBe('COmBiNaTiOn');
@@ -112,6 +112,34 @@ describe('Extended String Class', function() {
       expect('!@#$'.ucFirst()).toBe('!@#$');
       expect('    '.ucFirst()).toBe('    ');
       expect('Abott'.ucFirst()).toBe('Abott');
+    });
+  });
+
+  describe('method isQuestion', function() {
+    it('is defined', function() {
+      expect(String.isQuestion).toBeDefined();
+    });
+
+    it('is a function', function() {
+      expect(String.isQuestion).toEqual(jasmine.any(Function));
+    });
+
+    it('returns true if a string ends with a question mark', function() {
+      expect('word?'.isQuestion()).toBe(true);
+      expect('A simple sentence?'.isQuestion()).toBe(true);
+      expect('with* other% characters?'.isQuestion()).toBe(true);
+      expect('???????'.isQuestion()).toBe(true);
+      expect('num123bers456?!'.isQuestion()).toBe(true);
+      expect('IN UPPER CASE?'.isQuestion()).toBe(true);
+      expect('Ends with white space? '.isQuestion()).toBe(true);
+    });
+
+    it('returns false if a string does not end with question mark', function() {
+      expect('word?%'.isQuestion()).toBe(false);
+      expect('?A simple sentence'.isQuestion()).toBe(false);
+      expect('!@#$*&^%'.isQuestion()).toBe(false);
+      expect('??????#'.isQuestion()).toBe(false);
+      expect('Eager question?!'.isQuestion()).toBe(false);
     });
   });
 
