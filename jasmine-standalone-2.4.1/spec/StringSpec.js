@@ -1,9 +1,5 @@
 describe('Extended String Class', function() {
     describe('method hasVowels', function() {
-        it('is defined', function() {
-            expect(String.hasVowels).toBeDefined();
-        });
-
         it('is a function', function() {
             expect(String.hasVowels).toEqual(jasmine.any(Function));
         });
@@ -37,10 +33,6 @@ describe('Extended String Class', function() {
     });
 
     describe('method toUpper', function() {
-        it('is defined', function() {
-            expect(String.toUpper).toBeDefined();
-        });
-
         it('is a function', function() {
             expect(String.toUpper).toEqual(jasmine.any(Function));
         });
@@ -64,10 +56,6 @@ describe('Extended String Class', function() {
     });
 
     describe('method toLower', function() {
-        it('is defined', function() {
-            expect(String.toLower).toBeDefined();
-        });
-
         it('is a function', function() {
             expect(String.toLower).toEqual(jasmine.any(Function));
         });
@@ -91,10 +79,6 @@ describe('Extended String Class', function() {
     });
 
     describe('method ucFirst', function() {
-        it('is defined', function() {
-            expect(String.ucFirst).toBeDefined();
-        });
-
         it('is a function', function() {
             expect(String.ucFirst).toEqual(jasmine.any(Function));
         });
@@ -119,10 +103,6 @@ describe('Extended String Class', function() {
     });
 
     describe('method isQuestion', function() {
-        it('is defined', function() {
-            expect(String.isQuestion).toBeDefined();
-        });
-
         it('is a function', function() {
             expect(String.isQuestion).toEqual(jasmine.any(Function));
         });
@@ -147,10 +127,6 @@ describe('Extended String Class', function() {
     });
 
     describe('method words', function() {
-        it('is defined', function() {
-            expect(String.words).toBeDefined();
-        });
-
         it('is a function', function() {
             expect(String.words).toEqual(jasmine.any(Function));
         });
@@ -174,10 +150,6 @@ describe('Extended String Class', function() {
     });
 
     describe('method wordCount', function() {
-        it('is defined', function() {
-            expect(String.wordCount).toBeDefined();
-        });
-
         it('is a function', function() {
             expect(String.wordCount).toEqual(jasmine.any(Function));
         });
@@ -193,10 +165,6 @@ describe('Extended String Class', function() {
     });
 
     describe('method toCurrency', function() {
-        it('is defined', function() {
-            expect(String.toCurrency).toBeDefined();
-        });
-
         it('is a function', function() {
             expect(String.toCurrency).toEqual(jasmine.any(Function));
         });
@@ -221,10 +189,6 @@ describe('Extended String Class', function() {
     });
 
     describe('method fromCurrency', function() {
-        it('is defined', function() {
-            expect(String.toCurrency).toBeDefined();
-        });
-
         it('is a function', function() {
             expect(String.toCurrency).toEqual(jasmine.any(Function));
         });
