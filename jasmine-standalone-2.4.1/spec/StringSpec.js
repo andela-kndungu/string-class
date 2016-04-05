@@ -205,18 +205,47 @@ describe('Extended String Class', function() {
             expect('11111.11'.toCurrency()).toBe('11,111.11');
             expect('54'.toCurrency()).toBe('54');
             expect('347838437438249'.toCurrency()).toBe('347,838,437,438,249');
-            expect('2.50'.wordCount()).toBe('2.50');
-            expect('27 324'.wordCount()).toBe('27,324');
-            expect('987,23.12'.wordCount()).toBe('98,723.12');
+            expect('2.50'.toCurrency()).toBe('2.50');
+            expect('27 324'.toCurrency()).toBe('27,324');
+            expect('987,23.12'.toCurrency()).toBe('98,723.12');
         });
 
         it('returns 0 for non number input', function() {
             expect('123u'.toCurrency()).toBe('0');
             expect('ten'.toCurrency()).toBe('0');
-            expect(''.toCurrency()).toBe('347,838,437,438,249');
+            expect(''.toCurrency()).toBe('0');
             expect('2e5'.toCurrency()).toBe('0');
             expect('!@##$%^^'.toCurrency()).toBe('0');
-            expect('[345]'.wordCount()).toBe('0');
+            expect('[345]'.toCurrency()).toBe('0');
+        });
+    });
+
+    describe('method fromCurrency', function() {
+        it('is defined', function() {
+            expect(String.toCurrency).toBeDefined();
+        });
+
+        it('is a function', function() {
+            expect(String.toCurrency).toEqual(jasmine.any(Function));
+        });
+
+        it('returns currency representation of string', function() {
+            expect('11,111.11'.fromCurrency()).toBe(11111.11);
+            expect('54'.fromCurrency()).toBe(54);
+            expect('347,838,437,438,249'.fromCurrency())
+                .toBe('347838437438249');
+            expect('2.50'.fromCurrency()).toBe(2.50);
+            expect('27,324'.fromCurrency()).toBe(27, 324);
+            expect('987,23.12'.fromCurrency()).toBe(98723.12);
+        });
+
+        it('returns 0 for non parsable input', function() {
+            expect('123u'.fromCurrency()).toBe(0);
+            expect('ten'.fromCurrency()).toBe(0);
+            expect(''.fromCurrency()).toBe(0);
+            expect('2e5'.fromCurrency()).toBe(0);
+            expect('!@##$%^^'.fromCurrency()).toBe(0);
+            expect('[345]'.fromCurrency()).toBe(0);
         });
     });
 
