@@ -39,4 +39,4 @@ open SpecRunner.html
 
 `toCurrency` : Returns a currency representation of the String e.g 11111.11 should be represented as 11,111.11.
 
-`fromCurrency` : Returns a number representation of the Currency String e.g 11,111.11 should return 11111.11# string-class
+`fromCurrency` : Returns a number representation of the Currency String e.g 11,111.11 should return 11111.11.
