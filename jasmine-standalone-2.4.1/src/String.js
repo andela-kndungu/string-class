@@ -27,3 +27,11 @@ String.prototype.toLower = function() {
     return String.fromCharCode(character.charCodeAt() + lowerUpperDifference);
   });
 };
+
+String.prototype.ucFirst = function() {
+  // Search for lowercase and diacteric characters at beginning of string
+  // and convert to uppercase equivalent
+  return this.replace(/^[a-zà-ż]/, function convert(character) {
+    return character.toUpper();
+  });
+};
