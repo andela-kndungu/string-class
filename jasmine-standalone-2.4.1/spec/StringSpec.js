@@ -135,7 +135,7 @@ describe('Extended String Class', function() {
               .toEqual(['one', 'two', 'three']);
           expect('one, two, three'.words())
               .toEqual(['one', 'two', 'three']);
-          expect('a/simple/sentece'.words())
+          expect('a/simple/sentence'.words())
               .toEqual(['a', 'simple', 'sentence']);
           expect('word'.words())
               .toEqual(['word']);
@@ -143,7 +143,7 @@ describe('Extended String Class', function() {
               .toEqual([]);
           expect(' A dog (canine) is a pet'.words())
               .toEqual(['A', 'dog', 'canine', 'is', 'a', 'pet']);
-          expect('DrInK tea at Cafè'.isWords())
+          expect('DrInK tea at Cafè'.words())
               .toEqual(['DrInK', 'tea', 'at', 'Cafè']);
       });
   });
