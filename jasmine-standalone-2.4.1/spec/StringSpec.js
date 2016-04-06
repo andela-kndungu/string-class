@@ -112,7 +112,6 @@ describe('Extended String Class', function() {
           expect('A simple sentence?'.isQuestion()).toBe(true);
           expect('with* other% characters?'.isQuestion()).toBe(true);
           expect('???????'.isQuestion()).toBe(true);
-          expect('num123bers456?!'.isQuestion()).toBe(true);
           expect('IN UPPER CASE?'.isQuestion()).toBe(true);
           expect('Ends with white space? '.isQuestion()).toBe(true);
       });
