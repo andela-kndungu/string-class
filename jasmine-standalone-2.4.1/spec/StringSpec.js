@@ -34,7 +34,7 @@ describe('Extended String Class', function() {
 
   describe('method toUpper', function() {
       it('is a function', function() {
-          expect(String.toUpper).toEqual(jasmine.any(Function));
+          expect('A string'.toUpper).toEqual(jasmine.any(Function));
       });
 
       it('converts lower case characters to upper case', function() {
@@ -57,7 +57,7 @@ describe('Extended String Class', function() {
 
   describe('method toLower', function() {
       it('is a function', function() {
-          expect(String.toLower).toEqual(jasmine.any(Function));
+          expect('A string'.toLower).toEqual(jasmine.any(Function));
       });
 
       it('converts upper case characters to lower case', function() {
@@ -80,7 +80,7 @@ describe('Extended String Class', function() {
 
   describe('method ucFirst', function() {
       it('is a function', function() {
-          expect(String.ucFirst).toEqual(jasmine.any(Function));
+          expect('A string'.ucFirst).toEqual(jasmine.any(Function));
       });
 
       it('converts first letters to upper case', function() {
@@ -104,7 +104,7 @@ describe('Extended String Class', function() {
 
   describe('method isQuestion', function() {
       it('is a function', function() {
-          expect(String.isQuestion).toEqual(jasmine.any(Function));
+          expect('A string'.isQuestion).toEqual(jasmine.any(Function));
       });
 
       it('returns true if string is a question', function() {
@@ -128,7 +128,7 @@ describe('Extended String Class', function() {
 
   describe('method words', function() {
       it('is a function', function() {
-          expect(String.words).toEqual(jasmine.any(Function));
+          expect('A string'.words).toEqual(jasmine.any(Function));
       });
 
       it('returns an array of words in string', function() {
@@ -151,7 +151,7 @@ describe('Extended String Class', function() {
 
   describe('method wordCount', function() {
       it('is a function', function() {
-          expect(String.wordCount).toEqual(jasmine.any(Function));
+          expect('A string'.wordCount).toEqual(jasmine.any(Function));
       });
 
       it('returns number of words in string', function() {
@@ -166,7 +166,7 @@ describe('Extended String Class', function() {
 
   describe('method toCurrency', function() {
       it('is a function', function() {
-          expect(String.toCurrency).toEqual(jasmine.any(Function));
+          expect('A string'.toCurrency).toEqual(jasmine.any(Function));
       });
 
       it('returns currency representation of string', function() {
@@ -190,7 +190,7 @@ describe('Extended String Class', function() {
 
   describe('method fromCurrency', function() {
       it('is a function', function() {
-          expect(String.toCurrency).toEqual(jasmine.any(Function));
+          expect('A string'.toCurrency).toEqual(jasmine.any(Function));
       });
 
       it('returns currency representation of string', function() {
