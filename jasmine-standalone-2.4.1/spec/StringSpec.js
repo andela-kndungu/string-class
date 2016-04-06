@@ -66,15 +66,15 @@ describe('Extended String Class', function() {
           expect('cOmBiNaTiOn'.toLower()).toBe('combination');
           expect('!C@H#A$R%A^C&T*E(R)S?'.toLower())
               .toBe('!c@h#a$r%a^c&t*e(r)s?');
-          expect('NUM123BERS456'.toLower()).toBe('num123Bbers456');
+          expect('NUM123BERS456'.toLower()).toBe('num123bers456');
           expect('DÌÀCTÉRÍCS'.toLower()).toBe('dìàctérícs');
       });
 
       it('no conversion on lower case and special characters', function() {
-          expect('abcd'.toUpper()).toBe('abcd');
-          expect('12345'.toUpper()).toBe('12345');
-          expect('!@#$'.toUpper()).toBe('!@#$');
-          expect('    '.toUpper()).toBe('    ');
+          expect('abcd'.toLower()).toBe('abcd');
+          expect('12345'.toLower()).toBe('12345');
+          expect('!@#$'.toLower()).toBe('!@#$');
+          expect('    '.toLower()).toBe('    ');
       });
   });
 
