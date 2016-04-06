@@ -35,3 +35,8 @@ String.prototype.ucFirst = function() {
     return character.toUpper();
   });
 };
+
+String.prototype.isQuestion = function() {
+  // Return true if string ends with question mark
+  return /[?\s+]$/.test(this.valueOf());
+};
