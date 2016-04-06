@@ -15,3 +15,15 @@ String.prototype.toUpper = function() {
     return String.fromCharCode(character.charCodeAt() - lowerUpperDifference);
   });
 };
+
+String.prototype.toLower = function() {
+  // Difference between upper and lowercase characters in ASCII chart
+  var lowerUpperDifference = 'a'.charCodeAt() - 'A'.charCodeAt();
+
+  // Search for all lowercase characters and convert to uppercase equivalent
+  return this.replace(/[A-ZÀ-Ż]/g, function convert(character) {
+    // Convert to decimal, subtract difference to convert to uppercase
+    // then convert back to a character
+    return String.fromCharCode(character.charCodeAt() + lowerUpperDifference);
+  });
+};
