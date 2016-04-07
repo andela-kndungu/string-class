@@ -145,6 +145,8 @@ describe('Extended String Class', function() {
               .toEqual(['A', 'dog', 'canine', 'is', 'a', 'pet']);
           expect('DrInK tea at Cafè'.words())
               .toEqual(['DrInK', 'tea', 'at', 'Cafè']);
+          expect('complex-words like O\'reilly'.words())
+              .toEqual(['complex-words', 'like', 'O\'reilly']);
       });
   });
 
