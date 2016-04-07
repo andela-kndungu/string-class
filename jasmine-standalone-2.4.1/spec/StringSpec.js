@@ -196,9 +196,9 @@ describe('Extended String Class', function() {
           expect('11,111.11'.fromCurrency()).toBe(11111.11);
           expect('54'.fromCurrency()).toBe(54);
           expect('347,838,437,438,249'.fromCurrency())
-              .toBe('347838437438249');
+              .toBe(347838437438249);
           expect('2.50'.fromCurrency()).toBe(2.50);
-          expect('27,324'.fromCurrency()).toBe(27, 324);
+          expect('27,324'.fromCurrency()).toBe(27324);
           expect('98,723.12'.fromCurrency()).toBe(98723.12);
       });
 
