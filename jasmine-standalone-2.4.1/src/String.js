@@ -22,7 +22,7 @@ String.prototype.toLower = function() {
 
   // Search for all lowercase characters and convert to uppercase equivalent
   return this.replace(/[A-ZÀ-Ż]/g, function convert(character) {
-    // Convert to decimal, subtract difference to convert to uppercase
+    // Convert to decimal, add difference to convert to lowercase
     // then convert back to a character
     return String.fromCharCode(character.charCodeAt() + lowerUpperDifference);
   });
@@ -44,13 +44,12 @@ String.prototype.isQuestion = function() {
 String.prototype.words = function() {
   // Match a word character with or without diacterics
   var matchWords = /([\wà-ż-']+)/g;
+
   // Array of words matched
   var wordsMatched = this.valueOf().match(matchWords);
+
   // Return array of words or empty array if none matched
-  if(wordsMatched) {
-    return wordsMatched;
-  }
-  return [];
+  return wordsMatched || [];
 };
 
 String.prototype.wordCount = function() {
