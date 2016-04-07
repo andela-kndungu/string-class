@@ -1,5 +1,4 @@
 describe('Extended String Class', function() {
-
   describe('method hasVowels', function() {
       it('is a function', function() {
           expect('A string'.hasVowels).toEqual(jasmine.any(Function));
@@ -169,9 +168,7 @@ describe('Extended String Class', function() {
           expect('A string'.wordCount).toEqual(jasmine.any(Function));
       });
 
-
       it('returns number of words in string', function() {
-          // spyOn(String.prototype, 'words').and.callThrough();
           expect('a b, c; d'.wordCount()).toBe(4);
           expect(''.wordCount()).toBe(0);
           expect('word'.wordCount()).toBe(1);
