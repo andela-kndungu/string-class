@@ -67,27 +67,14 @@ String.prototype.toCurrency = function() {
     return '0';
   }
 
-  // Iterations through which commas will be added
-  var thousands =Math.floor(this.valueOf().length/3);
-
-  // Will add the commas
-  var helper = function(numbers) {
-    return ',' + numbers;
-  };
-
-  // Progressively add commas
-  for (var i = 0; i <= thousands - 1; i++) {
-    theString = theString.replace(/\d{3}$|\d{3}[\.,]{1}/g, helper);
-  }
-
-  // Remove duplicate commas
-  theString = theString.replace(/,{2,}/g, ',');
-
-  // Remove commas from beginning of string
-  if(/^,/.test(theString)) {
-    theString = theString.substr(1);
-  }
-  return theString.replace(/,{2,}/g, ',');
+  // Match a digit (\d) that:
+  //   Is followed by one or more groups of three digits (?=\d{3}+)
+  //   The group of three digits should not be followed by a digit (?!\d)
+  // In the entire string(g)
+  return theString.replace(/(\d)(?=(\d{3})+(?!\d))/g, function(number) {
+    // Add comma to matched number
+    return number + ',';
+  });
 };
 
 String.prototype.fromCurrency = function() {
