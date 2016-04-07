@@ -19,6 +19,7 @@
     "global",
     "jasmine",
     "beforeEach",
+    "spyOn",
     "describe",
     "before",
     "it",

@@ -1,10 +1,11 @@
 describe('Extended String Class', function() {
+
   describe('method hasVowels', function() {
       it('is a function', function() {
           expect('A string'.hasVowels).toEqual(jasmine.any(Function));
       });
 
-      it('returns truthy if a string contains vowels', function() {
+      it('returns true if a string contains vowels', function() {
           expect('an'.hasVowels()).toBeTruthy();
           expect('egg'.hasVowels()).toBeTruthy();
           expect('indy'.hasVowels()).toBeTruthy();
@@ -79,6 +80,9 @@ describe('Extended String Class', function() {
   });
 
   describe('method ucFirst', function() {
+      beforeAll(function() {
+        spyOn(String.prototype, 'toUpper').and.callThrough();
+      });
       it('is a function', function() {
           expect('A string'.ucFirst).toEqual(jasmine.any(Function));
       });
@@ -100,6 +104,10 @@ describe('Extended String Class', function() {
           expect('    '.ucFirst()).toBe('    ');
           expect('Abott'.ucFirst()).toBe('Abott');
       });
+
+      it('calls method toUpper', function() {
+        expect(String.prototype.toUpper).toHaveBeenCalledTimes(5);
+      });
   });
 
   describe('method isQuestion', function() {
@@ -107,7 +115,7 @@ describe('Extended String Class', function() {
           expect('A string'.isQuestion).toEqual(jasmine.any(Function));
       });
 
-      it('returns truthy if string is a question', function() {
+      it('returns true if string is a question', function() {
           expect('word?'.isQuestion()).toBeTruthy();
           expect('A simple sentence?'.isQuestion()).toBeTruthy();
           expect('with* other% characters?'.isQuestion()).toBeTruthy();
@@ -153,17 +161,27 @@ describe('Extended String Class', function() {
   });
 
   describe('method wordCount', function() {
+      beforeAll(function() {
+        spyOn(String.prototype, 'words').and.callThrough();
+      });
+
       it('is a function', function() {
           expect('A string'.wordCount).toEqual(jasmine.any(Function));
       });
 
+
       it('returns number of words in string', function() {
+          // spyOn(String.prototype, 'words').and.callThrough();
           expect('a b, c; d'.wordCount()).toBe(4);
           expect(''.wordCount()).toBe(0);
           expect('word'.wordCount()).toBe(1);
           expect('dìàctérícs cafè'.wordCount()).toBe(2);
           expect('a simple !@##$%^^'.wordCount()).toBe(2);
           expect('A normal sentence.'.wordCount()).toBe(3);
+      });
+
+      it('calls method words', function() {
+        expect(String.prototype.words).toHaveBeenCalledTimes(6);
       });
   });
 
