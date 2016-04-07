@@ -174,7 +174,7 @@ describe('Extended String Class', function() {
           expect('347838437438249'.toCurrency()).toBe('347,838,437,438,249');
           expect('2.50'.toCurrency()).toBe('2.50');
           expect('27 324'.toCurrency()).toBe('27,324');
-          expect('987,23.12'.toCurrency()).toBe('98,723.12');
+          expect('98,723.12'.toCurrency()).toBe('98,723.12');
       });
 
       it('returns 0 for non number input', function() {
