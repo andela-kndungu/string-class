@@ -4,20 +4,20 @@ describe('Extended String Class', function() {
           expect('A string'.hasVowels).toEqual(jasmine.any(Function));
       });
 
-      it('returns true if a string contains vowels', function() {
-          expect('an'.hasVowels()).toBe(true);
-          expect('egg'.hasVowels()).toBe(true);
-          expect('indy'.hasVowels()).toBe(true);
-          expect('on'.hasVowels()).toBe(true);
-          expect('up'.hasVowels()).toBe(true);
-          expect('cafè'.hasVowels()).toBe(true);
-          expect('an indy egg on up cafè'.hasVowels()).toBe(true);
-          expect('CASE'.hasVowels()).toBe(true);
-          expect('?/ENDS'.hasVowels()).toBe(true);
-          expect('WITH'.hasVowels()).toBe(true);
-          expect('ON'.hasVowels()).toBe(true);
-          expect('UP5'.hasVowels()).toBe(true);
-          expect('Combining CasEs and +?\\ 4768'.hasVowels()).toBe(true);
+      it('returns truthy if a string contains vowels', function() {
+          expect('an'.hasVowels()).toBeTruthy();
+          expect('egg'.hasVowels()).toBeTruthy();
+          expect('indy'.hasVowels()).toBeTruthy();
+          expect('on'.hasVowels()).toBeTruthy();
+          expect('up'.hasVowels()).toBeTruthy();
+          expect('cafè'.hasVowels()).toBeTruthy();
+          expect('an indy egg on up cafè'.hasVowels()).toBeTruthy();
+          expect('CASE'.hasVowels()).toBeTruthy();
+          expect('?/ENDS'.hasVowels()).toBeTruthy();
+          expect('WITH'.hasVowels()).toBeTruthy();
+          expect('ON'.hasVowels()).toBeTruthy();
+          expect('UP5'.hasVowels()).toBeTruthy();
+          expect('Combining CasEs and +?\\ 4768'.hasVowels()).toBeTruthy();
       });
 
       it('returns false if a string does not contain vowels', function() {
@@ -107,13 +107,13 @@ describe('Extended String Class', function() {
           expect('A string'.isQuestion).toEqual(jasmine.any(Function));
       });
 
-      it('returns true if string is a question', function() {
-          expect('word?'.isQuestion()).toBe(true);
-          expect('A simple sentence?'.isQuestion()).toBe(true);
-          expect('with* other% characters?'.isQuestion()).toBe(true);
-          expect('???????'.isQuestion()).toBe(true);
-          expect('IN UPPER CASE?'.isQuestion()).toBe(true);
-          expect('Ends with white space? '.isQuestion()).toBe(true);
+      it('returns truthy if string is a question', function() {
+          expect('word?'.isQuestion()).toBeTruthy();
+          expect('A simple sentence?'.isQuestion()).toBeTruthy();
+          expect('with* other% characters?'.isQuestion()).toBeTruthy();
+          expect('???????'.isQuestion()).toBeTruthy();
+          expect('IN UPPER CASE?'.isQuestion()).toBeTruthy();
+          expect('Ends with white space? '.isQuestion()).toBeTruthy();
       });
 
       it('returns false if string is not a question', function() {
