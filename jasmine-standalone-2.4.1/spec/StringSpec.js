@@ -189,7 +189,7 @@ describe('Extended String Class', function() {
 
   describe('method fromCurrency', function() {
       it('is a function', function() {
-          expect('A string'.toCurrency).toEqual(jasmine.any(Function));
+          expect('A string'.fromCurrency).toEqual(jasmine.any(Function));
       });
 
       it('returns currency representation of string', function() {
