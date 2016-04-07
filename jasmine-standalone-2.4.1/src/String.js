@@ -89,3 +89,19 @@ String.prototype.toCurrency = function() {
   }
   return theString.replace(/,{2,}/g, ',');
 };
+
+String.prototype.fromCurrency = function() {
+  // Remove white space from string
+  var theString = this.valueOf().replace(/\s/g, '');
+
+  // Catch non convertible input
+  if (!theString || /[^\d\.,]/.test(theString)) {
+    return 0;
+  }
+
+  // Remove commas
+  theString = theString.replace(/,/g, '');
+
+  // Convert to number and return
+  return Number(theString);
+};
