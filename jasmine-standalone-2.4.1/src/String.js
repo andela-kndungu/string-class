@@ -57,3 +57,35 @@ String.prototype.wordCount = function() {
   // Return length of the array of words
   return this.words().length;
 };
+
+String.prototype.toCurrency = function() {
+  // Remove white space from string
+  var theString = this.valueOf().replace(/\s/g, '');
+
+  // Catch non convertible input
+  if (!theString || /[^\d\.,]/.test(theString)) {
+    return '0';
+  }
+
+  // Iterations through which commas will be added
+  var thousands =Math.floor(this.valueOf().length/3);
+
+  // Will add the commas
+  var helper = function(numbers) {
+    return ',' + numbers;
+  };
+
+  // Progressively add commas
+  for (var i = 0; i <= thousands - 1; i++) {
+    theString = theString.replace(/\d{3}$|\d{3}[\.,]{1}/g, helper);
+  }
+
+  // Remove duplicate commas
+  theString = theString.replace(/,{2,}/g, ',');
+
+  // Remove commas from beginning of string
+  if(/^,/.test(theString)) {
+    theString = theString.substr(1);
+  }
+  return theString.replace(/,{2,}/g, ',');
+};
