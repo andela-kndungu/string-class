@@ -199,7 +199,7 @@ describe('Extended String Class', function() {
               .toBe('347838437438249');
           expect('2.50'.fromCurrency()).toBe(2.50);
           expect('27,324'.fromCurrency()).toBe(27, 324);
-          expect('987,23.12'.fromCurrency()).toBe(98723.12);
+          expect('98,723.12'.fromCurrency()).toBe(98723.12);
       });
 
       it('returns 0 for non parsable input', function() {
