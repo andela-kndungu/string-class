@@ -43,7 +43,7 @@ String.prototype.isQuestion = function() {
 
 String.prototype.words = function() {
   // Match a word character with or without diacterics
-  var matchWords = /([\wà-ż]+)/g;
+  var matchWords = /([\wà-ż-']+)/g;
   // Array of words matched
   var wordsMatched = this.valueOf().match(matchWords);
   // Return array of words or empty array if none matched
